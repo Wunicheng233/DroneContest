@@ -81,7 +81,7 @@ class AutoCommander:
         # ==========================================
         elif self.state == self.STATE_EXPLORING:
             # 距离目标不到 0.3 米，认为已经就位
-            if self.distance_to_target() < 0.3:  
+            if self.distance_to_target() < 0.8:  
                 rospy.loginfo("🔍 [指挥官] 到达预备点！开启相机，假装正在运行 YOLO 寻找圆环...")
                 self.search_start_time = rospy.Time.now()
                 self.state = self.STATE_SEARCHING
@@ -103,7 +103,7 @@ class AutoCommander:
         # 状态 3: 监控穿环突进过程
         # ==========================================
         elif self.state == self.STATE_CROSSING:
-            if self.distance_to_target() < 0.4:
+            if self.distance_to_target() < 0.8:
                 rospy.loginfo("🎉 [指挥官] 穿环突进成功！任务圆满完成，切入驻留状态。")
                 self.state = self.STATE_FINISHED
 
