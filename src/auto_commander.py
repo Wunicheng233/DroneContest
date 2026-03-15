@@ -52,7 +52,7 @@ class AutoCommander:
         goal.pose.orientation.w = 1.0
         self.goal_pub.publish(goal)
         self.target_goal = (x, y, z)
-        rospy.logwarn(f"🎯 [指挥官下令] 全军突击！新战术坐标: X={x}, Y={y}, Z={z}")
+        rospy.logwarn(f"🎯 [指挥官下令] 坐标: X={x}, Y={y}, Z={z}")
 
     def distance_to_target(self):
         # 勾股定理算三维空间误差距离
@@ -116,5 +116,6 @@ class AutoCommander:
 if __name__ == '__main__':
     try:
         AutoCommander()
+        rospy.spin()
     except rospy.ROSInterruptException:
         pass
