@@ -1,6 +1,6 @@
-# DroneContest - 空中具身智能自主导航系统
+# DroneContest - 空中具身智能自主导航系统(开发中)
 
-本项目为《空中具身智能赛项》量身打造的无人机底层软件架构与算法工作空间。项目基于 **ROS 1 (Noetic)** 开发，实现了从 3D 物理仿真 (Gazebo + PX4) 到自主视觉避障 (Ego-Planner-Swarm) 再到状态机决策控制 (Auto Commander) 的全链路闭环。
+本项目为参加空中具身智能竞赛量身打造的无人机底层软件架构与算法工作空间。项目基于 **ROS 1 (Noetic)** 开发，实现了从 3D 物理仿真 (Gazebo + PX4) 到自主视觉避障 (Ego-Planner-Swarm) 再到状态机决策控制 (Auto Commander) 的全链路闭环。
 
 未来的实机硬件目标平台为：**5寸重载飞行器 + Pixhawk 6C Mini + Jetson Orin Nano + OAK-D-Pro 深度相机**。目前已完美实现 SITL (Software In The Loop) 纯软件在环仿真。
 
@@ -20,7 +20,7 @@
 
 > **极其重要**：本项目代码体积轻量。为了不撑爆 GitHub 仓库，体积庞大的 PX4 源码和编译文件已被加入 `.gitignore`。拉取本项目后，**必须手动下载 PX4 并补全依赖**。
 
-### 1. 宿主机 (Ubuntu 24.04) 准备
+### 1. 宿主机 (Ubuntu 24.04) 准备（如果不用docker，可以跳过）
 
 在克隆代码前，请确保宿主机已安装 Docker，并开放 X11 图形界面转发权限：
 
